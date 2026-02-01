@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}
+    Blog Page
+{% endblock %}
+{% block content %}
+    <div class="grid-blog-main">
+      
+        <h1 
+        class="blog-title">Latest Blog  Page</h1>
+    
+        <div class="grid-blog-one">
+           
+                <div class="blog-card">
+                    {% if mypage.images %}
+                    <img src="{{ mypage.images.url }}" alt="{{ mypage.title }}" class="blog-image">
+                    {% endif %}
+                    <div class="blog-content">
+               
+        <h1 
+        class="blog-title">
+        {{ mypage.title }}
+            </h1>
+           
+                        <p class="blog-intro">{{ mypage.introduction}}</p>
+                        <p>{{mypage.content|safe}}</p>
+                        <div class="blog-meta">
+                            <span class="blog-writer">{{ mypage.writer }}</span>
+                            <span class="blog-date">{{ mypage.date }}</span>
+                        </div>
+                    </div>
+                </div>
+           
+         
+        </div>
+    </div>
+{% endblock %}

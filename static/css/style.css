@@ -1,0 +1,272 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+}
+
+.header{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    background-color: honeydew;
+}
+
+.header p{
+    margin-left: 50px;
+
+}
+
+.header p a{
+    font-size: 30px;
+    color: darkgreen;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.header p a span{
+    font-size: 20px;
+    border-bottom: 5px solid darkgreen;
+    color:black;
+}
+
+.header ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.header ul li{
+    height: 70px;
+}
+
+.header ul li a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    height:100%;
+    text-decoration: none;
+}
+
+.header ul li a:hover{
+    background: oldlace;
+    border-bottom: 5px solid darkgreen;
+}
+
+h1{
+    margin-top: 20px;
+}
+
+
+.grid-blog-main {
+    max-width: 80%;
+    margin: 50px auto;
+    padding: 2rem;
+}
+
+.blog-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.grid-blog-one {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.blog-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    border: 1px solid black;
+}
+
+.blog-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.blog-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 1.5rem;
+}
+
+.blog-heading {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #00509e;
+}
+
+.blog-intro,
+.blog-body {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+}
+
+.blog-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.no-posts {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #999;
+    font-size: 1.2rem;
+}
+
+.grid-blog-main form{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.grid-blog-main form input{
+    width: 70%;
+    height: 30px;
+    
+}
+
+.grid-blog-main form button{
+    width: 15%;
+    height: 30px;
+    background-color: darkgreen;
+    color: #fff;
+}
+
+.grid-blog-main form button:focus{
+    width: 15%;
+    height: 30px;
+    background-color:chartreuse;
+    color: #fff;
+}
+
+.search{
+    margin: 110px auto;
+    width: 80%;
+    min-height: 50vh;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(229, 235, 241);
+}
+
+.pag{
+    width: 60%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+/* GRID DESIGN */
+.grid-design{
+    display: grid;
+    margin: 0px auto;
+    width: 80%;
+    min-height: 80vh;
+    gap: 15px;
+    grid-template-columns: 70% 30%;
+}
+.grid-design-one{
+     border: 2px solid black;
+}
+
+.grid-design-one:nth-child(1) form{
+    display: flex;
+    width: 100%;
+}
+
+
+
+.grid-design-one:nth-child(2){
+    display: grid;
+    gap: 20px;
+    align-content: start;
+    padding: 10px;
+
+}
+
+.grid-design-one:nth-child(2) form input{
+    width: 80%;
+    margin: auto;
+    height: 40px;
+    
+}
+
+.grid-design-one:nth-child(2) form button{
+    width: 15%;
+    height: 40px;
+}
+
+.grid-two{
+    background-color: #a9bdd1;
+    min-height: 20vh;
+    
+}
+
+
+.contact{
+    margin: 100px auto;
+    width: 60%;
+    min-height: 70vh;
+    border: 2px solid gray;
+    box-shadow: 0px 0px 10px rgba(0, 0,0, 0.5);
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+.contact form{
+    display: grid;
+    gap: 5px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.contact form input,
+.contact form textarea{
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px sol #ccc;
+    font-size: 18px;
+}
+
+.contact form textarea{
+    min-height: 30vh;
+    resize: vertical;
+}
+
+.contact form button{
+    min-height: 40px;
+    background: darkcyan;
+    width: 30%;
+    margin: auto;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+}

@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}
+    Blog
+{% endblock %}
+{% block content %}
+
+    <div class="grid-blog-main">
+
+        
+        <h1 
+        class="blog-title">Latest Blog Posts</h1>
+       
+      <form action="{% url "search" %}" method="post">
+            {% csrf_token %}
+            <input type="search" name="searched" id="" placeholder="Search for Blog">
+            <button>Search</button>
+
+        </form> 
+        
+        <div class="grid-blog-one">
+            {% for Blog in Blogs %}
+                <div class="blog-card">
+                    {% if Blog.images %}
+                    <img src="{{ Blog.images.url }}" alt="{{ Blog.title }}" class="blog-image">
+                    {% endif %}
+                    <div class="blog-content">
+               
+       
+        <a href="{% url "page" slug=Blog.slug %}">
+        <h1 
+        class="blog-title">
+        {{ Blog.title }}
+            </h1>
+            </a>
+           
+                        <p class="blog-intro">{{ Blog.introduction|truncatewords:25 }}</p>
+                        
+                        <div class="blog-meta">
+                            <span class="blog-writer">{{ Blog.writer }}</span>
+                            <span class="blog-date">{{ Blog.date }}</span>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <p class="no-posts">No blog posts available.</p>
+            {% endfor %}
+        </div>
+        
+        <div class="pag">
+            {% if Blogs.has_previous %}
+                <a href="?page=1">&laquo; First</a>
+                <a href="?page={{Blogs.previous_page_number}}">Previous</a>
+            {% endif %}
+
+            <span>Page{{Blogs.number}} of {{Blogs.paginator.num_pages}}</span>
+
+            {% if Blogs.has_next %}
+
+            <a href="?page={{Blogs.next_page_number}}">Next</a>
+            <a href="?page={{Blogs.paginator.num_pages}}">Last</a>
+            
+            {% endif %}
+        </div>
+       
+    </div>
+
+
+    </div>
+{% endblock %}
