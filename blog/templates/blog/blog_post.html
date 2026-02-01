@@ -10,6 +10,12 @@
         
         <h1 
         class="blog-title">Latest Blog Posts</h1>
+
+        {% if messages %}
+            {% for message in  messages%}
+                {{message}}
+            {% endfor %}
+        {% endif %}
        
       <form action="{% url "search" %}" method="post">
             {% csrf_token %}
