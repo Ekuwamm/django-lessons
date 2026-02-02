@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login,logout
 from django.contrib import messages
 # Create your views here.
 
@@ -19,3 +19,9 @@ def login_user(request):
             return redirect('login-user')
     else:
         return render(request, 'user/login_user.html')
+    
+def logout_user(request):
+    logout(request)
+    messages.success(request, 'Goodbye')
+    return redirect('/')
+      
