@@ -19,9 +19,10 @@ def login_user(request):
             return redirect('login-user')
     else:
         return render(request, 'user/login_user.html')
-    
+ 
 def logout_user(request):
     logout(request)
     messages.success(request, 'Goodbye')
     return redirect('/')
-      
+    
+    

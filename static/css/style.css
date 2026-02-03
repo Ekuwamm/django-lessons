@@ -306,3 +306,15 @@ h1{
     background-color:darkcyan;
     border-radius: 10px;
 }
+
+/* home */
+
+.home{
+    margin: 150px auto;
+    width: 50%;
+    min-height: 50vh;
+}
+
+.home h1{
+    text-align: center;
+}
