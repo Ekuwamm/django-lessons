@@ -25,4 +25,6 @@ def logout_user(request):
     messages.success(request, 'Goodbye')
     return redirect('/')
     
+
+
     
